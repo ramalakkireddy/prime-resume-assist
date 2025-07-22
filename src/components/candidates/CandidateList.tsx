@@ -128,7 +128,7 @@ const CandidateList = () => {
                 <SelectValue placeholder="Filter by skill" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Skills</SelectItem>
+                <SelectItem value="all">All Skills</SelectItem>
                 <SelectItem value="react">React</SelectItem>
                 <SelectItem value="python">Python</SelectItem>
                 <SelectItem value="node">Node.js</SelectItem>
