@@ -3,7 +3,12 @@ import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 import Dashboard from "@/components/dashboard/Dashboard";
 import CandidateList from "@/components/candidates/CandidateList";
+import AddCandidate from "@/components/candidates/AddCandidate";
 import AIMatching from "@/components/ai/AIMatching";
+import JobDescriptions from "@/components/jobs/JobDescriptions";
+import ResumeBank from "@/components/resumes/ResumeBank";
+import Analytics from "@/components/analytics/Analytics";
+import Messages from "@/components/messages/Messages";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -14,41 +19,37 @@ const Index = () => {
         return <Dashboard />;
       case "candidates":
         return <CandidateList />;
+      case "add-candidate":
+        return <AddCandidate />;
       case "ai-match":
         return <AIMatching />;
       case "jobs":
-        return (
-          <div className="p-6">
-            <h1 className="text-3xl font-bold">Job Descriptions</h1>
-            <p className="text-muted-foreground">Manage job postings and requirements</p>
-          </div>
-        );
+        return <JobDescriptions />;
       case "resumes":
-        return (
-          <div className="p-6">
-            <h1 className="text-3xl font-bold">Resume Bank</h1>
-            <p className="text-muted-foreground">Browse and manage candidate resumes</p>
-          </div>
-        );
+        return <ResumeBank />;
       case "analytics":
-        return (
-          <div className="p-6">
-            <h1 className="text-3xl font-bold">Analytics</h1>
-            <p className="text-muted-foreground">Recruitment performance insights</p>
-          </div>
-        );
+        return <Analytics />;
       case "messages":
-        return (
-          <div className="p-6">
-            <h1 className="text-3xl font-bold">Messages</h1>
-            <p className="text-muted-foreground">Communication center</p>
-          </div>
-        );
+        return <Messages />;
       case "settings":
         return (
           <div className="p-6">
             <h1 className="text-3xl font-bold">Settings</h1>
-            <p className="text-muted-foreground">System configuration</p>
+            <p className="text-muted-foreground">System configuration and user management</p>
+            <div className="mt-6 space-y-4">
+              <div className="p-4 border rounded-lg">
+                <h3 className="font-semibold mb-2">User Management</h3>
+                <p className="text-muted-foreground text-sm">Manage recruiter accounts and permissions</p>
+              </div>
+              <div className="p-4 border rounded-lg">
+                <h3 className="font-semibold mb-2">System Configuration</h3>
+                <p className="text-muted-foreground text-sm">Configure application settings and integrations</p>
+              </div>
+              <div className="p-4 border rounded-lg">
+                <h3 className="font-semibold mb-2">Security & Compliance</h3>
+                <p className="text-muted-foreground text-sm">Data privacy and security settings</p>
+              </div>
+            </div>
           </div>
         );
       default:
